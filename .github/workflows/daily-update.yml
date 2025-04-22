@@ -75,6 +75,15 @@ jobs:
         run: python .meta/repo-tools/extract_signalsets.py --fetch --workspace workspace --output build ${{ env.FILTER_ARGS }} --signal-prefix=${{ env.SIGNAL_PREFIX }}
         id: extract_data
 
+      - name: Upload provenance reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: provenance-reports
+          path: |
+            build/signal_provenance_report.json
+            build/signal_provenance_report.md
+          retention-days: 7
+
       - name: Checkout schemas repo
         uses: actions/checkout@v4
         with:
