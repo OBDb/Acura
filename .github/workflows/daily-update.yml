@@ -75,14 +75,14 @@ jobs:
         run: python .meta/repo-tools/extract_signalsets.py --fetch --workspace workspace --output build ${{ env.FILTER_ARGS }} --signal-prefix=${{ env.SIGNAL_PREFIX }}
         id: extract_data
 
-      - name: Upload provenance reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: provenance-reports
-          path: |
-            build/signal_provenance_report.json
-            build/signal_provenance_report.md
-          retention-days: 7
+      - name: Display provenance report in workflow summary
+        run: |
+          echo "## Signal Provenance Report" >> $GITHUB_STEP_SUMMARY
+          cat build/signal_provenance_report.md >> $GITHUB_STEP_SUMMARY
+          echo -e "\n\n## Raw JSON Data" >> $GITHUB_STEP_SUMMARY
+          echo '```json' >> $GITHUB_STEP_SUMMARY
+          cat build/signal_provenance_report.json >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
 
       - name: Checkout schemas repo
         uses: actions/checkout@v4
