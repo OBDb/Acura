@@ -1,9 +1,4 @@
 { "commands": [
-{ "hdr": "DA0E", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
-  "signals": [
-    {"id": "ACURA_GEAR_V2", "path": "Transmission", "fmt": {"bix": 352, "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear v2"},
-    {"id": "ACURA_GEAR_V3", "path": "Transmission", "fmt": {"bix": 368, "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear v3"}
-  ]},
 { "hdr": "DA10", "dbg": true, "cmd": {"22": "2660"}, "freq": 5,
   "signals": [
     {"id": "ACURA_ODO",   "path": "Trips",  "fmt": {"bix": 344, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",                "suggestedMetric": "odometer"},
@@ -90,9 +85,9 @@
   "signals": [
     {"id": "ACURA_EOP", "path": "Fluids", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Oil pressure"}
   ]},
-{ "hdr": "DA1D", "dbg": true, "cmd": {"22": "2221"}, "freq": 1,
+{ "hdr": "DA1D", "fcm1": true, "dbg": true, "cmd": {"22": "2221"}, "freq": 30,
   "signals": [
-    {"id": "ACURA_GEAR", "path": "Transmission", "fmt": {"bix": 184, "len": 8, "max": 255, "unit": "scalar" }, "name": "Current gear"}
+    {"id": "ACURA_GEAR_V2", "path": "Transmission", "fmt": {"bix": 184, "len": 8, "max": 255, "unit": "scalar" }, "name": "Gear"}
   ]},
 { "hdr": "DA1D", "rax": "1D", "dbg": true, "cmd": {"22": "2201"}, "freq": 1,
   "signals": [
@@ -146,7 +141,7 @@
   ]},
 { "hdr": "DB33", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.75,
   "signals": [
-    {"id": "ACURA_GEAR_V2", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
+    {"id": "ACURA_GEAR", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
           "1":  { "description": "Drive 1", "value": "D1" },
           "2":  { "description": "Drive 2", "value": "D2" },
