@@ -1,19 +1,19 @@
 { "commands": [
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2610"}, "freq": 1,
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2610"}, "freq": 5,
   "signals": [
     {"id": "ACURA_GENERATOR", "path": "Engine",  "fmt": {"bix": 184, "len": 8, "max": 100, "mul": 100, "div": 255, "unit": "percent" }, "name": "Generator"},
     {"id": "ACURA_AC_CLUTCH", "path": "Climate", "fmt": {"bix": 256, "len": 8, "max": 255,                         "unit": "scalar"  }, "name": "Air conditioner clutch"}
   ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2611"}, "freq": 1,
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2611"}, "freq": 0.25,
   "signals": [
     {"id": "ACURA_FUEL_AIR_RATIO", "path": "Fuel",   "fmt": {           "len": 8,  "max": 255,                             "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"},
     {"id": "ACURA_AIRGAS_RATIO",   "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "mul": 29.4, "div": 65535, "unit": "scalar" }, "name": "Air/gas ratio"}
   ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2612"}, "freq": 1,
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2612"}, "freq": 0.25,
   "signals": [
     {"id": "ACURA_VTEC_CTRL", "path": "ECU", "fmt": {"bix": 168, "len": 8, "max": 255, "unit": "scalar" }, "name": "Variable valve control"}
   ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2615"}, "freq": 1,
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2615"}, "freq": 0.5,
   "signals": [
     {"id": "ACURA_ACTIVE_CYL", "path": "Engine", "fmt": {"bix": 400, "len": 8, "max": 6, "unit": "scalar" }, "name": "Active cylinders"}
   ]},
@@ -26,7 +26,7 @@
   "signals": [
     {"id": "ACURA_FUELAIR_CAR", "path": "Engine", "fmt": {"bix": 64, "len": 16, "max": 29.4, "div": 2229.08163265, "unit": "scalar" }, "name": "Fuel/air commanded equivalence ratio"}
   ]},
-{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2662"}, "freq": 1,
+{ "hdr": "DA10", "rax": "10", "dbg": true, "cmd": {"22": "2662"}, "freq": 0.25,
   "signals": [
     {"id": "ACURA_KNOCK_CTRL",    "path": "ECU",    "fmt": {"bix": 80,  "len": 8, "max": 2,   "mul": 2,   "div": 255, "unit": "scalar"  }, "name": "Knock control"},
     {"id": "ACURA_KNOCK_CONTROL", "path": "Engine", "fmt": {"bix": 80,  "len": 8, "max": 2,   "mul": 2,   "div": 255, "unit": "unknown" }, "name": "Knock control",              "description": "ECU's determination of fuel quality."},
@@ -37,7 +37,9 @@
     {"id": "ACURA_MISFIRE_1", "path": "ECU", "fmt": {"bix": 272, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 1"},
     {"id": "ACURA_MISFIRE_2", "path": "ECU", "fmt": {"bix": 288, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 2"},
     {"id": "ACURA_MISFIRE_3", "path": "ECU", "fmt": {"bix": 304, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 3"},
-    {"id": "ACURA_MISFIRE_4", "path": "ECU", "fmt": {"bix": 320, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 4"}
+    {"id": "ACURA_MISFIRE_4", "path": "ECU", "fmt": {"bix": 320, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 4"},
+    {"id": "ACURA_MISFIRE_5", "path": "ECU", "fmt": {"bix": 336, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 5"},
+    {"id": "ACURA_MISFIRE_6", "path": "ECU", "fmt": {"bix": 352, "len": 16, "max": 65535, "unit": "scalar" }, "name": "Misfire count, cylinder 6"}
   ]},
 { "hdr": "DA11", "rax": "11", "dbg": true, "cmd": {"22": "2611"}, "freq": 5,
   "signals": [
@@ -81,9 +83,9 @@
   ]},
 { "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3083"}, "freq": 5,
   "signals": [
-    {"id": "ACURA_ATF", "path": "Transmission", "fmt": {"bix": 112, "len": 8, "max": 200, "min": -40, "add": -40, "unit": "celsius" }, "name": "ATF temperature"}
+    {"id": "ACURA_ATF_T", "path": "Transmission", "fmt": {"bix": 112, "len": 8, "max": 200, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature"}
   ]},
-{ "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.5,
+{ "hdr": "DA1E", "rax": "1E", "dbg": true, "cmd": {"22": "3086"}, "freq": 0.25,
   "signals": [
     {"id": "ACURA_GEAR", "path": "Transmission", "name": "Transmission gear", "fmt": {"bix": 160, "len": 8, "map": {
           "0":  { "description": "Park",    "value": "P" },
@@ -101,12 +103,16 @@
         }}
     }
   ]},
-{ "hdr": "DA26", "rax": "26", "dbg": true, "cmd": {"22": "6001"}, "freq": 15,
+{ "hdr": "DA26", "rax": "26", "dbg": true, "cmd": {"22": "6001"}, "freq": 5,
   "signals": [
-    {"id": "ACURA_TP_FR", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"},
-    {"id": "ACURA_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Front left tire pressure",  "suggestedMetric": "frontLeftTirePressure"},
-    {"id": "ACURA_TP_RR", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Rear right tire pressure",  "suggestedMetric": "rearRightTirePressure"},
-    {"id": "ACURA_TP_RL", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 65535, "unit": "kilopascal" }, "name": "Rear left tire pressure",   "suggestedMetric": "rearLeftTirePressure"}
+    {"id": "ACURA_TP_FR", "path": "Tires", "fmt": {"bix": 64,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front right tire pressure",    "suggestedMetric": "frontRightTirePressure"},
+    {"id": "ACURA_TP_FL", "path": "Tires", "fmt": {"bix": 80,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Front left tire pressure",     "suggestedMetric": "frontLeftTirePressure"},
+    {"id": "ACURA_TP_RR", "path": "Tires", "fmt": {"bix": 96,  "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Rear right tire pressure",     "suggestedMetric": "rearRightTirePressure"},
+    {"id": "ACURA_TP_RL", "path": "Tires", "fmt": {"bix": 112, "len": 16, "max": 65535,                            "unit": "kilopascal" }, "name": "Rear left tire pressure",      "suggestedMetric": "rearLeftTirePressure"},
+    {"id": "ACURA_TT_FR", "path": "Tires", "fmt": {"bix": 192, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front right tire temperature"},
+    {"id": "ACURA_TT_FL", "path": "Tires", "fmt": {"bix": 200, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Front left tire temperature"},
+    {"id": "ACURA_TT_RR", "path": "Tires", "fmt": {"bix": 208, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear right tire temperature"},
+    {"id": "ACURA_TT_RL", "path": "Tires", "fmt": {"bix": 216, "len": 8,  "max": 127,   "min": -128, "sign": true, "unit": "celsius"    }, "name": "Rear left tire temperature"}
   ]},
 { "hdr": "DA60", "rax": "60", "dbg": true, "cmd": {"22": "7028"}, "freq": 5,
   "signals": [
