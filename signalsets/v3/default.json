@@ -140,7 +140,7 @@
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2613"}, "freq": 1,
   "signals": [
-    {"id": "ACURA_AC_P", "path": "Climate", "fmt": {"bix": 120, "len": 16, "max": 1000, "unit": "kilopascal" }, "name": "A/C pressure"}
+    {"id": "ACURA_AC_P", "path": "Climate", "fmt": {"bix": 120, "len": 16, "max": 4000, "unit": "kilopascal" }, "name": "A/C pressure"}
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2615"}, "freq": 1,
   "signals": [
