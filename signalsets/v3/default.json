@@ -120,6 +120,10 @@
     {"id": "ACURA_ECT_3",        "path": "Engine",  "fmt": {"bix": 1640, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "Engine coolant temperature sensor 3",        "suggestedMetric": "engineCoolantTemperature"},
     {"id": "ACURA_ECT_4",        "path": "Engine",  "fmt": {"bix": 1656, "len": 16, "max": 215, "min": -40, "div": 10, "sign": true, "unit": "celsius" }, "name": "Engine coolant temperature sensor 4",        "suggestedMetric": "engineCoolantTemperature"}
   ]},
+{ "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2203"}, "freq": 1,
+  "signals": [
+    {"id": "ACURA_EOP_PCM", "path": "Engine", "fmt": {"bix": 72, "len": 8, "max": 255, "unit": "kilopascal" }, "name": "Oil pressure"}
+  ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2240"}, "freq": 1,
   "signals": [
     {"id": "ACURA_BAT_DIST", "path": "Battery", "fmt": {"bix": 80, "len": 32, "max": 250000, "unit": "kilometers" }, "name": "Distance traveled since last charge"}
@@ -181,8 +185,9 @@
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "2666"}, "freq": 5,
   "signals": [
-    {"id": "ACURA_EOT_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 88,  "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 3"},
-    {"id": "ACURA_EOT_VAR_4_PCM", "path": "Engine", "fmt": {"bix": 112, "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Engine oil temperature, variant 4"}
+    {"id": "ACURA_OIL_LEVEL_PCM", "path": "Engine", "fmt": {"bix": 48,  "len": 8, "max": 127.5,             "div": 2,             "unit": "millimeters" }, "name": "Engine oil level"},
+    {"id": "ACURA_EOT_VAR_3_PCM", "path": "Engine", "fmt": {"bix": 88,  "len": 8, "max": 215,   "min": -40,           "add": -40, "unit": "celsius"     }, "name": "Engine oil temperature, variant 3"},
+    {"id": "ACURA_EOT_VAR_4_PCM", "path": "Engine", "fmt": {"bix": 112, "len": 8, "max": 215,   "min": -40,           "add": -40, "unit": "celsius"     }, "name": "Engine oil temperature, variant 4"}
   ]},
 { "hdr": "DA0E", "rax": "0E", "dbg": true, "cmd": {"22": "266C"}, "freq": 1,
   "signals": [
